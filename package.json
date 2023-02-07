@@ -1,0 +1,19 @@
+{
+  "name": "url-shortener",
+  "version": "0.1.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/perenstrom/url-shortener.git"
+  },
+  "author": "Per Enström <enstrom.per@gmail.com> (https://www.perenstrom.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/perenstrom/url-shortener/issues"
+  },
+  "homepage": "https://github.com/perenstrom/url-shortener#readme"
+}
