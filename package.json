@@ -9,6 +9,8 @@
   "dependencies": {
     "@fastify/env": "^4.2.0",
     "@fastify/postgres": "^5.2.0",
+    "@fastify/type-provider-typebox": "^2.4.0",
+    "@sinclair/typebox": "^0.25.21",
     "fastify": "^4.12.0",
     "pg": "^8.9.0"
   },
