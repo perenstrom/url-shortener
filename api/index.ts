@@ -70,8 +70,8 @@ const initialize = async () => {
     connectionString: server.config.CONNECTION_STRING,
   });
 
-  server.get<{ Params: { slug: string } }>("/api/:slug", handler(DEFAULT_URL));
-  server.get<{ Params: { slug: string } }>("/api/:slug/", handler(DEFAULT_URL));
+  server.get<{ Params: { slug: string } }>("/:slug", handler(DEFAULT_URL));
+  server.get<{ Params: { slug: string } }>("/:slug/", handler(DEFAULT_URL));
 };
 initialize();
 
