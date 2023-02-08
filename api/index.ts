@@ -75,6 +75,7 @@ const initialize = async () => {
 };
 initialize();
 
+
 export default async (req: VercelRequest, res: VercelResponse) => {
   try {
     await server.ready();
