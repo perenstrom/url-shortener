@@ -2,11 +2,11 @@
   "name": "url-shortener",
   "version": "0.1.0",
   "description": "",
-  "main": "dist/api/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "start": "npm run build && node dist/api/index.js",
-    "dev": "tsc && node dist/api/index.js"
+    "start": "npm run build && node dist/index.js",
+    "dev": "tsc && node dist/index.js"
   },
   "dependencies": {
     "@fastify/env": "^4.2.0",
