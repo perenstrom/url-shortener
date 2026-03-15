@@ -1,13 +1,6 @@
-import {
-  fastify,
-  FastifyReply,
-  FastifyRequest,
-  FastifySchema,
-  RouteShorthandOptions,
-} from "fastify";
+import { fastify, FastifyReply, FastifyRequest } from "fastify";
 import { fastifyPostgres } from "@fastify/postgres";
 import { fastifyEnv } from "@fastify/env";
-import { VercelRequest, VercelResponse } from "@vercel/node";
 import { Static, Type } from "@sinclair/typebox";
 import { TypeBoxTypeProvider } from "@fastify/type-provider-typebox";
 import { DatabaseError } from "pg";
@@ -152,14 +145,16 @@ const initialize = async () => {
   server.get<{ Params: { slug: string } }>("/:slug", getHandler(DEFAULT_URL));
   server.get<{ Params: { slug: string } }>("/:slug/", getHandler(DEFAULT_URL));
 };
-initialize();
 
-export default async (req: VercelRequest, res: VercelResponse) => {
+const port = Number(process.env.PORT) || 3000;
+const host = "0.0.0.0";
+
+(async () => {
   try {
-    await server.ready();
-    server.server.emit("request", req, res);
+    await initialize();
+    await server.listen({ port, host });
   } catch (error) {
     console.error(error);
     process.exit(1);
   }
-};
+})();
