@@ -135,9 +135,7 @@ const initialize = async () => {
 
   server.register(fastifyPostgres, {
     connectionString: server.config.CONNECTION_STRING,
-    ssl: {
-      rejectUnauthorized: false
-    }
+    ssl: false
   });
 
   server.post<{ Params: { slug: string }; Body: BodyType }>(
